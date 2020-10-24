@@ -1,1 +1,2 @@
-/* c=:c /elo/:c 200
+/* /js.html 200
+/js.html c=:c /test/:c 301
