@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/js.html"
+  to = "/js/:c"
+  status = 301
+  force = false
+  query = {c = ":c"}
