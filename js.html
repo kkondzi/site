@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>siema</title>
+</title>
+
+<body>
+
+<h1 id="site">strona glowna</h1>
+<h1 id="url">url</h1>
+<h1 id="title">title</h1>
+
+window.history.pushState('page2', 'Title', '/zmiana-na-routing-netlify-raz'); <br><br>
+
+<a href="js.html?c=raz">raz</a>
+<a href="js.html?c=dwa">dwa</a>
+<a href="js.html?c=trzy">trzy</a>
+
+<script>
+
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var c = url.searchParams.get("c");
+
+	var getH = document.getElementById("site");
+	var url = document.getElementById("url");
+	var title = document.getElementById("title");
+	
+	switch (c) {
+		case "raz":
+			getH.innerHTML = c;
+			document.title = c;
+			window.history.pushState(c, 'Title', '/BEKA');
+			url.innerHTML = "URL: " + window.location.href;
+			title.innerHTML = "TITLE: " + document.title;
+			break;
+		case "dwa":
+			getH.innerHTML = c;
+			document.title = c;
+			window.history.pushState(c, 'Title', '/js.html?c=' + c);
+			url.innerHTML = "URL: " + window.location.href;
+			title.innerHTML = "TITLE: " + document.title;
+			break;
+		case "trzy":
+			getH.innerHTML = c;
+			document.title = c;
+			window.history.pushState(c, 'Title', '/js.html?c=' + c);
+			url.innerHTML = "URL: " + window.location.href;
+			title.innerHTML = "TITLE: " + document.title;
+			break;
+		default:
+			getH.innerHTML = "brak parametru";
+	}
+	
+	window.addEventListener("popstate" e => {
+		console.log(e);
+	});
+	
+
+</script>
+
+</body>
+</html>
