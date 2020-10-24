@@ -13,7 +13,7 @@
 
 	var url_string = window.location.href;
 	var url = new URL(url_string);
-	var path = url.pathname;
+	var path = url.pathname.slice(1);
 	var res = path.split('/');
 	
 	console.log(res);
